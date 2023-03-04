@@ -21,8 +21,16 @@ void print(Node *head){
     }
     cout << endl;
 }
-
-Node *takeInput(){
+int findLength(Node *head){ //finding length of LL
+    int count=0;
+    Node *temp=head;
+    while(temp!=NULL){
+        temp=temp->next;
+        count++;
+    }
+    return count;
+}
+Node *takeInput(){  //Taking input till -1 is entered
     int data;
     cin>>data;
     Node *head=NULL;

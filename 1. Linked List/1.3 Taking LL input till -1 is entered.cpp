@@ -13,6 +13,7 @@ public:
 
 void print(Node *head){
     Node *temp = head;
+    
 
     while(temp != NULL){
         cout << temp -> data << " ";
@@ -25,17 +26,18 @@ Node *takeInput(){
     int data;
     cin>>data;
     Node *head=NULL;
+    Node *tail=NULL;
     while(data!=-1){
     Node *newNode= new Node(data);
     if(head==NULL){
-        head =newNode;  // For storing address of 1st node in  head
+        head =newNode; //For storing address of 1st node in head 
+        tail =newNode;
     }
     else{
         Node *temp=head;
-        while(temp->next!=NULL){
-            temp=temp->next;
-        }
-        temp->next=newNode;
+       
+        tail->next=newNode;
+        tail=newNode;
     }
     cin>>data;
 
@@ -49,5 +51,4 @@ int main(){
     Node *head= takeInput();
     print(head);
 
- 
 }

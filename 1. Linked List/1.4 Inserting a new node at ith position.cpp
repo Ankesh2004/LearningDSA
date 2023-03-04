@@ -56,6 +56,13 @@ void insert(Node* head,int i,int data){
     }
     newNode->next=temp->next;
     temp->next=newNode;
+    
+    /* Alternative to this  ------>
+    Node *a=temp->next;
+    temp->next=newNode;
+    newNode->next= a;
+    */
+    
 }
 
 int main(){

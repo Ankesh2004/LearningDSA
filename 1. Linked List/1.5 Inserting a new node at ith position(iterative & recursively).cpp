@@ -64,6 +64,23 @@ void insert(Node* head,int i,int data){
     */
     
 }
+void insertRecur(Node* head,int i,int data){
+    static int count=0;
+    
+    if(count==i-1){
+         Node *newNode= new Node(data);
+         newNode->next=head->next;
+    head->next=newNode;
+    return;
+    }
+    head=head->next;
+   
+    count++;
+    return insertRecur(head,i,data);
+        
+    
+    
+} 
 void deleteNode (Node* head,int i){
     int count=0;
     Node *temp=head;

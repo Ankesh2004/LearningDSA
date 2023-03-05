@@ -64,12 +64,28 @@ void insert(Node* head,int i,int data){
     */
     
 }
+void deleteNode (Node* head,int i){
+    int count=0;
+    Node *temp=head;
+  
+    while(count<i-1){
+        count++;
+        temp=temp->next;
+    }
+    Node *a=temp->next;
+    temp->next=a->next;
+    delete a;
+}
 
 int main(){
 
     Node *head= takeInput();
     print(head);
     insert(head,2,99); //inserting node with data=99, at 2nd position
+    print(head);
+    
+    print(head);
+    deleteNode(head,2); //Deleting node at 2nd position
     print(head);
     
 

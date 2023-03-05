@@ -30,6 +30,19 @@ int findLength(Node *head){ //finding length of LL
     }
     return count;
 }
+int lengthRecur(Node *head){  //Finding length recursively
+
+    static int count=0;
+    if(head==NULL){
+        return count;
+    }
+    count++;
+
+    return lengthRecur(head->next);
+
+    
+
+}
 Node *takeInput(){  //Taking input till -1 is entered
     int data;
     cin>>data;
